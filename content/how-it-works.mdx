@@ -1,0 +1,141 @@
+---
+title: "How It Works"
+description: "Learn how our platform operates to serve you better"
+image: "/images/how-it-works-banner.jpg"
+keywords: landing, work process, blogs, faq
+---
+
+<div className="gradientBg">
+  <div className="container">
+    <div className="text-center py-5">
+      <h2
+        className="fw-bold mb-4 hero-font-color"
+        style={{
+          fontFamily: "DM Serif Display, serif",
+          fontWeight: 400,
+          fontSize: "clamp(20px, 5vw, 60px)",
+          lineHeight: "1.1",
+          marginBottom: "2rem",
+        }}
+      >
+        <span>How It </span>
+        <span className="text-second">Works.</span>
+      </h2>
+      <p>Buy, sell, and trade locally in three simple steps</p>
+    </div>
+
+    <div className="py-5">
+      <div className="row">
+        <div className="col-12  mb-5">
+          <h2 className="display-5 fw-bold">Selling</h2>
+        </div>
+      </div>
+
+      <div className="row g-4">
+        {[ 
+          { step: 1, title: "Post Your Ad", text: "Add photos, description, and price" },
+          { step: 2, title: "Get Messages", text: "Buyers contact you directly" },
+          { step: 3, title: "Meet & Sell", text: "Arrange a safe meeting and close the deal" },
+        ].map(({ step, title, text }) => (
+          <div key={step} className="col-md-4 text-center">
+            <div className="card border-0 h-100 shadow-sm bg-transparent">
+              <div className="card-body p-4">
+                <div
+                  className="bg-app-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
+                  style={{ width: "60px", height: "60px" }}
+                >
+                  <span className="fs-4 fw-bold">{step}</span>
+                </div>
+                <h4 className="card-title text-dark mb-3">{title}</h4>
+                <p className="card-text text-muted">{text}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="row mt-5 bg-white border-start border-primary">
+        <div className="col-12 p-4">
+          <p className="text-muted mb-0">
+            <strong>Posting is free.</strong> Optional premium features available to boost visibility.
+          </p>
+        </div>
+      </div>
+    </div>
+ 
+    <div className="py-5">
+      <div className="row">
+        <div className="col-12  mb-5">
+          <h2 className="display-5 fw-bold">Buying</h2>
+        </div>
+      </div>
+
+      <div className="row g-4">
+        {[ 
+          { step: 1, title: "Browse Listings", text: "Search by category or location" },
+          { step: 2, title: "Contact Seller", text: "Message directly through the platform" },
+          { step: 3, title: "Inspect & Buy", text: "Meet in person, check the item, and purchase" },
+        ].map(({ step, title, text }) => (
+          <div key={step} className="col-md-4 text-center">
+            <div className="card border-0 h-100 shadow-sm bg-transparent">
+              <div className="card-body p-4">
+                <div
+                  className="bg-app-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
+                  style={{ width: "60px", height: "60px" }}
+                >
+                  <span className="fs-4 fw-bold">{step}</span>
+                </div>
+                <h4 className="card-title text-dark mb-3">{title}</h4>
+                <p className="card-text text-muted">{text}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="row mt-5 bg-white border-start border-primary">
+        <div className="col-12 p-4">
+          <p className="text-muted mb-0">
+            <strong>Always meet in public places.</strong> Prefer cash for local transactions.
+          </p>
+        </div>
+        <div className="col-12 p-4">
+          <p className="text-muted mb-0">
+            <strong>Never send money in advance.</strong> Inspect items before paying.
+          </p>
+        </div>
+      </div>
+    </div>
+ 
+
+    <div className="py-5">
+      <div className="row">
+        <div className="col-12  mb-5">
+          <h2 className="display-5 fw-bold">Barter & Exchange</h2>
+          <p> Trade items without money. Select "Exchange" when posting your ad and specify what you're looking for.</p>
+        </div>
+      </div>
+
+      
+      <div className="row mt-5 bg-white border-start border-primary">
+        <div className="col-12 p-4">
+          <p className="text-muted mb-0">
+            <strong>Agree on fair values</strong> before meeting.
+          </p>
+          <p className="text-muted mb-0">
+            <strong>Inspect both items</strong> thoroughly.
+          </p>
+          <p className="text-muted mb-0">
+            <strong>Note:</strong> Barter may have tax implications in your country.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  <div className='text-center py-5'>
+    <h1 className='fw-bold hero-font-color'>Start Trading Today</h1>
+    <p>Join millions buying, selling, and bartering across Eurasia</p>
+  </div>
+
+  </div>
+</div>
