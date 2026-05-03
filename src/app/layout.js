@@ -8,6 +8,13 @@ import axios from "axios";
 // import Script from "next/script";
 
 export const generateMetadata = async () => {
+  if (!process.env.NEXT_PUBLIC_API_URL || !process.env.NEXT_PUBLIC_END_POINT) {
+    console.warn("API URL or End Point not defined. Skipping metadata fetch.");
+    return {
+      title: process.env.NEXT_PUBLIC_META_TITLE || "Stage Right",
+      description: process.env.NEXT_PUBLIC_META_DESCRIPTION || "Stage Right platform",
+    };
+  }
   try {
     const response = await axios.get(
       `${process.env.NEXT_PUBLIC_API_URL}${process.env.NEXT_PUBLIC_END_POINT}get-system-settings`,

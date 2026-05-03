@@ -4,17 +4,23 @@ import axios from 'axios';
 
 
 export const generateMetadata = async ({ params }) => {
-    try {
-  
-      const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_URL}${process.env.NEXT_PUBLIC_END_POINT}get-system-settings?type=terms_conditions`,
-        {
+  if (!process.env.NEXT_PUBLIC_API_URL || !process.env.NEXT_PUBLIC_END_POINT) {
+    return {
+      title: process.env.NEXT_PUBLIC_META_TITLE || "Terms and Conditions",
+      description: process.env.NEXT_PUBLIC_META_DESCRIPTION || "Terms and Conditions page",
+    };
+  }
+  try {
+
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_API_URL}${process.env.NEXT_PUBLIC_END_POINT}get-system-settings?type=terms_conditions`,
+      {
         headers: {
           Accept: "application/json", 
           "Content-Type": "application/json",
         },
       }
-      );
+    );
   
       const htmlContent = response?.data?.data?.terms_conditions
   

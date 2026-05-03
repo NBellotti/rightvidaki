@@ -3,6 +3,12 @@ import PrivacyPolicy from '@/components/PagesComponent/PrivacyPolicy/PrivacyPoli
 import axios from 'axios';
 
 export const generateMetadata = async () => {
+  if (!process.env.NEXT_PUBLIC_API_URL || !process.env.NEXT_PUBLIC_END_POINT) {
+    return {
+      title: process.env.NEXT_PUBLIC_META_TITLE || "Privacy Policy",
+      description: process.env.NEXT_PUBLIC_META_DESCRIPTION || "Privacy Policy page",
+    };
+  }
   try {
 
     const response = await axios.get(

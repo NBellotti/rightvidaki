@@ -5,7 +5,9 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 
 const Api = axios.create({
-  baseURL: `${process.env.NEXT_PUBLIC_API_URL}${process.env.NEXT_PUBLIC_END_POINT}`
+  baseURL: (process.env.NEXT_PUBLIC_API_URL && process.env.NEXT_PUBLIC_END_POINT) 
+    ? `${process.env.NEXT_PUBLIC_API_URL}${process.env.NEXT_PUBLIC_END_POINT}`
+    : ''
 })
 
 let isUnauthorizedToastShown = false;

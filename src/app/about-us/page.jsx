@@ -4,6 +4,12 @@ import axios from 'axios';
 
 
 export const generateMetadata = async ({ params }) => {
+  if (!process.env.NEXT_PUBLIC_API_URL || !process.env.NEXT_PUBLIC_END_POINT) {
+    return {
+      title: process.env.NEXT_PUBLIC_META_TITLE || "About Us",
+      description: process.env.NEXT_PUBLIC_META_DESCRIPTION || "About Us page",
+    };
+  }
   try {
 
     const response = await axios.get(
